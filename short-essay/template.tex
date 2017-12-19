@@ -1,0 +1,172 @@
+% Originally from below, since heavily modified
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 12pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+%-------------------------------------------------------------------------
+% TEMPLATE PACKAGES
+%-------------------------------------------------------------------------
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+% USER PACKAGES
+%-------------------------------------------------------------------------
+\usepackage[margin=0.75in]{geometry}  % Set margins
+\usepackage[english]{babel}
+\usepackage{blindtext} % Text filler
+\usepackage[parfill]{parskip} % Blank line between paragraphs with no indent
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{titlesec}
+
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+% HEADING STYLES
+%-------------------------------------------------------------------------
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\makeatletter
+% \renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+  \begin{flushleft} % Right align
+    {\LARGE\@title} % Increase the font size of the title
+
+    \vspace{30pt} % Some vertical space between the title and author name
+
+    {\normalsize\@author} % Author name
+    \\\@date % Date
+
+    \vspace{10pt} % Some vertical space between the author block and abstract
+  \end{flushleft}
+}
+
+% SECTION HEADING STYLES
+\titlespacing*{\section}{0pt}{2ex}{0.1ex}
+\titlespacing*{\subsection}{0pt}{2ex}{0.1ex}
+\titlespacing*{\subsubsection}{0pt}{1ex}{0.1ex}
+
+% HEADER
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{}
+\rhead{\textcolor{black!60}\name{}}
+\rfoot{\textcolor{black!60}\thepage}
+
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+% HEADING CONTENT
+%-------------------------------------------------------------------------
+
+\newcommand{\paperTitle}{Really Long Winded Title} % TITLE
+\newcommand{\paperSubTitle}{Something Pithy to For a Subtitle} % SUBTITLE
+\newcommand{\name}{Daniel Welsh}                                                                                              % NAME
+\newcommand{\email}{d.welsh@ncl.ac.uk}                                                                                        % EMAIL
+\newcommand{\institution}{Open Lab, Newcastle University}                                                                     % INSTITUTION
+\newcommand{\keywords}{lorem, ipsum, dolor, sit amet, lectus}                                                                 % KEYWORDS
+%-------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	TITLE - Do not edit title content here, only styles
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{\paperTitle{}}\\ % Title
+\vspace{5pt}
+\large{\color{black!80}\paperSubTitle{}}} % Subtitle
+\author{\textbf{\color{black!100}\name{}} % Author
+\\{\color{black!80}\email{}}
+\\{\color{black!60}\institution{}}} % Institution
+\date{\color{black!60}\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}\thispagestyle{empty}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+% \begin{abstract}
+%   \blindtext
+% \end{abstract}
+% %
+% \hspace*{9,6mm}
+% \textit{Keywords:} \keywords{} % Keywords
+%
+% \vspace{30pt} % Some vertical space between the abstract and first section
+
+%----------------------------------------------------------------------------------------
+%	ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+\section*{Section 1}
+  \blindtext \cite{Smith:2012qr}
+
+  \blindtext
+
+  \blindtext \cite{Smith:2013jd}
+
+\section*{Section 2}
+  \blindtext
+
+  \subsection*{Sub Section 1}
+    \blindtext
+
+  \subsection*{Sub Section 2}
+    \blindtext
+
+    \subsubsection*{Sub Sub Section 1}
+      \blindtext
+
+    \subsubsection*{Sub Sub Section 2}
+      \blindtext
+
+    \subsubsection*{Sub Sub Section 3}
+      \blindtext
+
+\section*{Section 3}
+  \blindtext
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+% \bibliographystyle{unsrt}
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
