@@ -28,7 +28,8 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 \usepackage{graphicx} % Required for including pictures
 \usepackage{wrapfig} % Allows in-line images
-\usepackage{mathpazo} % Use the Palatino font
+\usepackage{helvet}
+\usepackage{times}
 \usepackage[T1]{fontenc} % Required for accented characters
 %-------------------------------------------------------------------------
 
@@ -39,7 +40,7 @@
 \usepackage[english]{babel}
 \usepackage{blindtext} % Text filler
 \usepackage[parfill]{parskip} % Blank line between paragraphs with no indent
-\usepackage{hyperref}
+% \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{titlesec}
@@ -55,7 +56,7 @@
 % \renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
 \renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
 
-\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\renewcommand{\maketitle}{{\fontfamily{phv}\selectfont\ % Customize the title - do not edit title and author name here, see the TITLE block below
   \begin{flushleft} % Right align
     {\LARGE\@title} % Increase the font size of the title
 
@@ -66,12 +67,24 @@
 
     \vspace{10pt} % Some vertical space between the author block and abstract
   \end{flushleft}
-}
+}}
 
 % SECTION HEADING STYLES
 \titlespacing*{\section}{0pt}{2ex}{0.1ex}
 \titlespacing*{\subsection}{0pt}{2ex}{0.1ex}
 \titlespacing*{\subsubsection}{0pt}{1ex}{0.1ex}
+
+\titleformat{\section}
+  {\fontfamily{phv}\selectfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\fontfamily{phv}\selectfont\large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\fontfamily{phv}\selectfont\normalsize\bfseries}
+  {\thesection}{1em}{}
 
 % HEADER
 \pagestyle{fancy}
@@ -94,17 +107,26 @@
 \newcommand{\keywords}{lorem, ipsum, dolor, sit amet, lectus}                                                                 % KEYWORDS
 %-------------------------------------------------------------------------
 
+% Meta data
+\usepackage[pdftex,
+            pdfauthor={\name{}},
+            pdftitle={\paperTitle{}},
+            pdfsubject={\paperSubTitle{}},
+            pdfkeywords={\keywords{}},
+            pdfproducer={Latex with hyperref},
+            pdfcreator={pdflatex}]{hyperref}
+
 %----------------------------------------------------------------------------------------
 %	TITLE - Do not edit title content here, only styles
 %----------------------------------------------------------------------------------------
 
-\title{\textbf{\paperTitle{}}\\ % Title
+\title{{\fontfamily{phv}\selectfont\textbf{\paperTitle{}}\\ % Title
 \vspace{5pt}
 \large{\color{black!80}\paperSubTitle{}}} % Subtitle
 \author{\textbf{\color{black!100}\name{}} % Author
 \\{\color{black!80}\email{}}
 \\{\color{black!60}\institution{}}} % Institution
-\date{\color{black!60}\today} % Date
+\date{\color{black!60}\today}} % Date
 
 %----------------------------------------------------------------------------------------
 
@@ -138,6 +160,8 @@
 
   \blindtext \cite{Smith:2013jd}
 
+
+
 \section*{Section 2}
   \blindtext
 
@@ -164,7 +188,7 @@
 %----------------------------------------------------------------------------------------
 
 % \bibliographystyle{unsrt}
-\bibliographystyle{SIGCHI-Reference-Format}
+\bibliographystyle{SIGCHI-Reference-Format.bst}
 \bibliography{sample}
 
 %----------------------------------------------------------------------------------------
